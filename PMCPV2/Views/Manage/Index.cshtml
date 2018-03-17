@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">
+    <h2>Settings</h2>
+    <div class="row border-bottom white-bg dashboard-header">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <h4>Main</h4>
+                @Html.ActionLink("Manage Users", "../Users")
+                <br />   @Html.ActionLink("Manage projects", "../Projects")
+                <br />   @Html.ActionLink("Manage Locations", "../Locations")
+                <br />   @Html.ActionLink("Manage Contractors", "../Contractors")
+                <br />   @Html.ActionLink("Manage VoltageLevels", "../VoltageLevels")
+            </div>
+            <div class="col-md-4">
+                <h4>Parametars</h4>
+                @Html.ActionLink("Manage ParameterNames", "../ParameterNames")
+                <br />   @Html.ActionLink("Manage Parameters", "../Parameters")
+                <br />   @Html.ActionLink("Manage ParameterCategories", "../ParameterCategories")
+                <br />   @Html.ActionLink("Manage ParametersUnitTypes", "../ParametersUnitTypes")
+                <br />   @Html.ActionLink("Manage ParameterCalcGroups", "../ParemeterCalcGroups")
+            </div>
+            <div class="col-md-4">
+                <h4>Work Orders</h4>
+                @Html.ActionLink("Manage WorkorderTypes", "../WorkorderTypes")
+                <br />   @Html.ActionLink("Manage WorkOrders", "../WorkOrders")
+                <br />   @Html.ActionLink("Manage WorkOrdersParameters", "../WorkOrdersParameters")
+                <br />   @Html.ActionLink("Manage WorkOrderStatus", "../WorkOrderStatus")
+                <br />   @Html.ActionLink("Manage WorkOrdersUsers", "../WorkOrdersUsers")
+            </div>
+        </div>
+
+    </div>
+</div>

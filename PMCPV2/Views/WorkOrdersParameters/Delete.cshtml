@@ -1,0 +1,99 @@
+﻿@model PMCP2.Models.WorkOrdersParameter
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>WorkOrdersParameter</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Parameter.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Parameter.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WorkOrder.Number)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WorkOrder.Number)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Lenght)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lenght)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.isDone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.isDone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.lastUpdate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.lastUpdate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DoneLength)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DoneLength)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DoneAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DoneAmount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.weightAmount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.weightAmount)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

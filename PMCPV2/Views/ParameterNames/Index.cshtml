@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PMCP2.Models.ParameterName>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <p>
+        @Html.ActionLink("Create New", "Create")| @Html.ActionLink("Back ", "../Manage")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.parameterNameName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.parameterNameName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.parameterNameID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.parameterNameID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.parameterNameID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

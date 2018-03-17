@@ -1,0 +1,90 @@
+﻿@model IEnumerable<PMCP2.Models.Parameter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <p>
+        @Html.ActionLink("Create New", "Create")| @Html.ActionLink("Back ", "../Manage")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ParameterCategory.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParameterName.parameterNameName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParametersUnitType.unitType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParemeterCalcGroup.Name)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParameterWight)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.networkType_FKID)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.isActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isRquired)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParameterCategory.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParameterName.parameterNameName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParametersUnitType.unitType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParemeterCalcGroup.Name)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParameterWight)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.networkType_FKID)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.isActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isRquired)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

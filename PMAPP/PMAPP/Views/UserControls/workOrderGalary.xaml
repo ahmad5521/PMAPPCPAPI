@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:customControls="clr-namespace:PMAPP.CustomControls;assembly=PMAPP"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMAPP.Views.UserControls.workOrderGalary">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                           BackgroundColor="#f8f9fa">
+                <StackLayout BackgroundColor="#47525e">
+                    <StackLayout.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                      iOS="65"
+                                      Android="80" />
+                    </StackLayout.HeightRequest>
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <customControls:ImageButton Source="cancel.gif"
+                                            ItemTapped="cancelEvent_Tapped"
+                                            WidthRequest="22" HeightRequest="22"    
+                                            Margin="30,0,0,0"
+                                            HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+                        <Label Margin="0,0,20,0" x:Name="headerTitle" HorizontalOptions="End" VerticalOptions="CenterAndExpand" 
+                           FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"  FontSize="Small" Text="صور أمر عمل" TextColor="White"  Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label x:Name="Nothing" Text="لا توجد صور" HeightRequest="200" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" FontAttributes="Bold" IsVisible="False" TextColor="#47525e" HorizontalOptions="Center" VerticalTextAlignment="End"/>
+                    <ListView x:Name="myList" AbsoluteLayout.LayoutBounds="0,0,1,1" SeparatorVisibility="None" ItemTapped="myList_ItemTapped"
+                         AbsoluteLayout.LayoutFlags="All" HasUnevenRows='True'>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell xfg:CellGloss.BackgroundColor="#f8f9fa">
+                                    <Image x:Name="myImages" Source="{Binding imageSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

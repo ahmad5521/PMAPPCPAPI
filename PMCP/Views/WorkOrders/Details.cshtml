@@ -1,0 +1,122 @@
+﻿@model PMCP2.Models.WorkOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Contractor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contractor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParameterCategory.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParameterCategory.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VoltageLevel.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoltageLevel.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkOrderStatu.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkOrderStatu.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalLenght)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalLenght)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.startingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxDueDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxDueDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateTimeStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateTimeStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.value)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

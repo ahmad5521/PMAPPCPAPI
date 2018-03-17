@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:myBehaviors="clr-namespace:PMAPP.Behaviors"
+             x:Class="PMAPP.Views.Login"
+             >
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main">
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                  AbsoluteLayout.LayoutFlags="All" 
+                  BackgroundColor="#f8f9fa">
+                <!--<Grid AbsoluteLayout.LayoutBounds=".5,.1,1,1" AbsoluteLayout.LayoutFlags="All">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width=".5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Source="login.png"/>
+                    <Image Grid.Column="1" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Source="login.png"/>
+                </Grid>-->
+                <!--<Image Source="bg.gif" Opacity=".8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" AbsoluteLayout.LayoutBounds=".5,.5,1,1" AbsoluteLayout.LayoutFlags="All">
+                    <Image Grid.Column="1" HeightRequest="65" WidthRequest="65" HorizontalOptions="Center" VerticalOptions="Center" Source="login.png"/>
+                    <BoxView HeightRequest="100"/>
+                <Label Text="تسجيل الدخول" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" FontAttributes="Bold" FontSize="24" TextColor="#47525e" HorizontalTextAlignment="Center" />
+                <BoxView HeightRequest="50"/>
+                <Entry x:Name="userNameEntry" BackgroundColor="White"  FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"  Keyboard="Numeric"
+                       Placeholder="اسم المستخدم" HeightRequest="50" FontSize="12" HorizontalTextAlignment="Center" WidthRequest="200">
+                    <Entry.Behaviors>
+                        <myBehaviors:IntegerBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry x:Name="passwordEntry" Placeholder="كلمة السر" BackgroundColor="White" FontSize="12" FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"  Keyboard="Default"
+                       WidthRequest="200" HeightRequest="50" HorizontalTextAlignment="Center" IsPassword="True" />
+                <Button Text="دخول" FontSize="12" FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" HeightRequest="60" WidthRequest="200"  
+                        BackgroundColor="#47525e" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked"/>
+                    <!--<BoxView HeightRequest="15"/>
+                    <Label HorizontalTextAlignment="Center" 
+                                       HorizontalOptions="Center" 
+                                       TextColor="#47525e" 
+                                       VerticalOptions="Center" 
+                                       FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" 
+                                       Text="برمجة وتطوير"/>
+                    <Label HorizontalTextAlignment="Center" 
+                                        HorizontalOptions="Center" 
+                                        TextColor="#47525e" 
+                                        VerticalOptions="Center" 
+                                        FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" 
+                                        Text="شركة أتمتة البرمجيات"/>
+                    <Label HorizontalTextAlignment="Center" 
+                                       HorizontalOptions="Center" 
+                                       TextColor="#47525e" 
+                                       VerticalOptions="Center" 
+                                       FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" 
+                                       Text="920005804"/>-->
+
+                    <!--<Label HorizontalOptions="Center" FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" Text="نسيت كلمة السر؟" />-->
+            </StackLayout>
+        </Grid>            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

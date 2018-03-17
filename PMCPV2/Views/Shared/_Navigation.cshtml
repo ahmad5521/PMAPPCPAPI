@@ -1,0 +1,60 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="~/Content/patterns/triangular.png" />
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Eng. Fayez Alzahrani</strong>
+                            </span> <span class="text-muted text-xs block">Electric Engnier <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="@Url.Action("Index", "Home")">Profile</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">Contacts</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">Mailbox</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index", "Home")">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    INJAZ+
+                </div>
+            </li>
+            @*<li class="nav-header">
+            <div class="dropdown profile-element">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <span class="clear">
+                        <span class="block m-t-xs">
+                            <strong class="font-bold">Example user</strong>
+                        </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <div class="logo-element">
+                INJAZ+
+            </div>
+        </li>*@
+            <li class="@Html.IsSelected(action: "Index", controller:"Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-laptop"></i> <span class="nav-label">DASHBOARD</span> </a>
+            </li>
+            <li class="@Html.IsSelected(action: "Index", controller:"Manage")">
+                <a href="@Url.Action("Index", "Manage")"><i class="fa fa-gear"></i> <span class="nav-label">SETTINGS</span></a>
+            </li>
+            @*<li class="@Html.IsSelected(action: "Index", controller:"UserProfile")">
+                <a href="@Url.Action("Index", "UserProfile")"><i class="fa fa-info-circle"></i> <span class="nav-label">PROFILE</span></a>
+            </li>*@
+            <li class="@Html.IsSelected(action: "Index", controller:"Statistics")">
+                <a href="@Url.Action("Index", "Statistics")"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">STATISTICS</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+

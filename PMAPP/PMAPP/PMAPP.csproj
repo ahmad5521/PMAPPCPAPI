@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A94A11C-9C14-4B13-A531-799E52A022D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PMAPP</RootNamespace>
+    <AssemblyName>PMAPP</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviors\IntegerBehavior.cs" />
+    <Compile Include="CustomControls\ExtendedViewCell.cs" />
+    <Compile Include="CustomControls\ImageButton.cs" />
+    <Compile Include="CustomControls\MyDatePicker.cs" />
+    <Compile Include="CustomControls\MyPicker.cs" />
+    <Compile Include="Models\Contractors.cs" />
+    <Compile Include="Models\DataStore.cs" />
+    <Compile Include="Models\Locations.cs" />
+    <Compile Include="Models\LookUPs.cs" />
+    <Compile Include="Models\NetworkTypes.cs" />
+    <Compile Include="Models\ParameterName.cs" />
+    <Compile Include="Models\Parameters.cs" />
+    <Compile Include="Models\ParameterCategory.cs" />
+    <Compile Include="Models\ParametersUnitTypes.cs" />
+    <Compile Include="Models\ParemeterCalcGroup.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Projects.cs" />
+    <Compile Include="Models\SettingData.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\ViewWorkOrderInfoAndParmatersWithWeightedValue.cs" />
+    <Compile Include="Models\VoltageLevels.cs" />
+    <Compile Include="Models\V_Contractor_noOfAchievedWorkorders_workorderType.cs" />
+    <Compile Include="Models\V_Contractor_noOfWorkorders_workorderType.cs" />
+    <Compile Include="Models\V_Project_percentOfAchievement_contractors.cs" />
+    <Compile Include="Models\V_Project_totalAmounts_project_contractor.cs" />
+    <Compile Include="Models\V_Project_totalLengths_project_contractor.cs" />
+    <Compile Include="Models\WorkOrderParametersView.cs" />
+    <Compile Include="Models\WorkOrders.cs" />
+    <Compile Include="Models\WorkOrdersActions.cs" />
+    <Compile Include="Models\WorkOrdersActionDetail.cs" />
+    <Compile Include="Models\WorkOrdersParameters.cs" />
+    <Compile Include="Models\WorkOrdersPhotos.cs" />
+    <Compile Include="Models\WorkOrderStatus.cs" />
+    <Compile Include="Models\WorkOrdersUsers.cs" />
+    <Compile Include="Models\WorkorderType.cs" />
+    <Compile Include="Models\WorkOrderView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestClient\RestClient.cs" />
+    <Compile Include="RestClient\TaskModel.cs" />
+    <Compile Include="Services\RestClientService.cs" />
+    <Compile Include="ViewModels\ProjectsReportViewModel.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="ViewModels\ContractorsViewModel.cs" />
+    <Compile Include="Views\EntryPage.xaml.cs">
+      <DependentUpon>EntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputAlertDialogBase.cs" />
+    <Compile Include="Views\InputViews\EachUpdateTextInputCancellableView.xaml.cs">
+      <DependentUpon>EachUpdateTextInputCancellableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\IsDoneUpdateTextInputCancellableView.xaml.cs">
+      <DependentUpon>IsDoneUpdateTextInputCancellableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\ProjectsSelectableInputView.xaml.cs">
+      <DependentUpon>ProjectsSelectableInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\PercentageUpdateCancellableView.xaml.cs">
+      <DependentUpon>PercentageUpdateCancellableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\MultipleDataInputView.xaml.cs">
+      <DependentUpon>MultipleDataInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\ParameterCatagoriesSelectableInputView.xaml.cs">
+      <DependentUpon>ParameterCatagoriesSelectableInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\PercentageUpdateSlider.xaml.cs">
+      <DependentUpon>PercentageUpdateSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\SlidableInputView.xaml.cs">
+      <DependentUpon>SlidableInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\KMUpdateTextInputCancellableView.xaml.cs">
+      <DependentUpon>KMUpdateTextInputCancellableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\TextInputCancellableView.xaml.cs">
+      <DependentUpon>TextInputCancellableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InputViews\TextInputView.xaml.cs">
+      <DependentUpon>TextInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Loading.xaml.cs">
+      <DependentUpon>Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Monitoring.xaml.cs">
+      <DependentUpon>Monitoring.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports.xaml.cs">
+      <DependentUpon>Reports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TEST.xaml.cs">
+      <DependentUpon>TEST.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TEST2.xaml.cs">
+      <DependentUpon>TEST2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\EditWorkOrder.xaml.cs">
+      <DependentUpon>EditWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\NewWorkOrderConti.xaml.cs">
+      <DependentUpon>NewWorkOrderConti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\NewWorkOrder.xaml.cs">
+      <DependentUpon>NewWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\NewWorkOrderSelectParameter.xaml.cs">
+      <DependentUpon>NewWorkOrderSelectParameter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ParametersView.xaml.cs">
+      <DependentUpon>ParametersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\reportContractors.xaml.cs">
+      <DependentUpon>reportContractors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\reportPage.xaml.cs">
+      <DependentUpon>reportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\reportProjects.xaml.cs">
+      <DependentUpon>reportProjects.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\workOrderGalary.xaml.cs">
+      <DependentUpon>workOrderGalary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\WorkOrderParametersPage.xaml.cs">
+      <DependentUpon>WorkOrderParametersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\WorkOrderParametersProgress.xaml.cs">
+      <DependentUpon>WorkOrderParametersProgress.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.8.3\lib\portable-net45+wp8+win8+wpa\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.8.3\lib\portable-net45+wp8+win8+wpa\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.3.0.1\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.3.0.1\lib\netstandard1.0\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=1.59.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.1.59.2\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Splat.1.6.2\lib\Portable-net45+win+wpa81+wp80\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms, Version=15.3451.0.33, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.15.3.0.33\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.Portable, Version=15.3451.0.33, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.15.3.0.33\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.DataSource.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable, Version=15.3451.0.33, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.15.3.0.33\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.GridCommon.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.XForms, Version=15.3451.0.33, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfBusyIndicator.15.3.0.33\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfBusyIndicator.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms, Version=15.3451.0.33, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.15.3.0.33\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms, Version=15.3451.0.33, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.15.3.0.33\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfListView.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.8.3\lib\portable-net45+wp8+win8+wpa\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.91635\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.91635\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.5.0.91635\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="XFGloss, Version=1.0.6.59, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ansuria.XFGloss.1.0.6.59\lib\portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\XFGloss.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Loading.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Monitoring.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\EditWorkOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\NewWorkOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Reports.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\ParametersView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\WorkOrderParametersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\WorkOrderParametersProgress.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\reportContractors.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\reportPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\reportProjects.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TEST.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TEST2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\workOrderGalary.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\MultipleDataInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\SlidableInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\TextInputCancellableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\TextInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\NewWorkOrderConti.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\NewWorkOrderSelectParameter.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\KMUpdateTextInputCancellableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\EachUpdateTextInputCancellableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\PercentageUpdateSlider.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\ParameterCatagoriesSelectableInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\PercentageUpdateCancellableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\IsDoneUpdateTextInputCancellableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InputViews\ProjectsSelectableInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.5.0.91635\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.5.0.91635\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.5.0.91635\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.91635\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+</Project>

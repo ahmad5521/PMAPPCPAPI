@@ -1,0 +1,90 @@
+﻿@model PMCP2.Models.WorkOrdersParameter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkOrdersParameter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Parameter.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parameter.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkOrder.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkOrder.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lenght)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lenght)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isDone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoneLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoneLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoneAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoneAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weightAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weightAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

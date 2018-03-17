@@ -1,0 +1,50 @@
+﻿@model PMCP2.Models.ParametersUnitType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ParametersUnitType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.unitType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unitType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unitMesurment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unitMesurment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

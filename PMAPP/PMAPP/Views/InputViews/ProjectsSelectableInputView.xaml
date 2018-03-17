@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="PMAPP.Views.InputViews.ProjectsSelectableInputView">
+    <ContentView.Content>
+        <StackLayout
+            Padding="10"
+            BackgroundColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="5"
+            HeightRequest="380"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="300">
+            <Label
+                x:Name="TitleLabel"
+                FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                FontSize="Medium"
+                HorizontalTextAlignment="End"
+                Text="Select the value:" />
+            <Label
+                x:Name="ValidationLabel"
+                FontSize="Micro"
+                FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                IsVisible="False"
+                HorizontalTextAlignment="End"
+                Text="يجب اختيار امر عمل اذا رغبت في المواصلة!"
+                TextColor="Red" />
+            <!--<BoxView HeightRequest="10"/>-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".85*"/>
+                    <RowDefinition Height=".15*"/>
+                </Grid.RowDefinitions>
+                <busyindicator:SfBusyIndicator Grid.Row="0" x:Name="bi" AnimationType="DoubleCircle" ViewBoxWidth="40"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="#47525e"
+                    Title = "please wait.." IsBusy="False" ViewBoxHeight="40"/>
+                <ListView Grid.Row="0" x:Name="SelectionListView" HeightRequest="150" SeparatorVisibility="None" ItemTapped="SelectionListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell xfg:CellGloss.BackgroundColor="#f8f9fa">
+                            <Label Text="{Binding Name}" 
+                                   FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                   IsVisible="True"
+                                   Margin="0,0,15,0"
+                                   TextColor="Black"
+                                   FontSize="12"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="End"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                <Grid Grid.Row="1">
+                <Button
+                    x:Name="CancelButton"
+                    Grid.Column="0"
+                    FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                    BackgroundColor="Gray"
+                    Text="إلغاء"
+                    FontSize="12"
+                    TextColor="White">
+                    <Button.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android" Value="50" />
+                            <On Platform="iOS" Value="50" />
+                            <On Platform="Windows" Value="50" />
+                        </OnPlatform>
+                    </Button.HeightRequest>
+                </Button>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

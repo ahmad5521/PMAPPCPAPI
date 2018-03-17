@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             x:Class="PMAPP.Views.TEST2">
+    <ContentPage.Content>
+
+        <AbsoluteLayout x:Name="main">
+            <Button Clicked="Button_Clicked" Text="show master"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="PMAPP.Views.Loading">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout x:Name="biContainar" IsVisible="True"  BackgroundColor="#90876A" Opacity=".9" 
+                         WidthRequest="5000" HeightRequest="5000"
+                                               AbsoluteLayout.LayoutBounds=".5,.5,1,1" 
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator"  
+                                               AnimationType="DoubleCircle"
+                                               ViewBoxWidth = "70"
+                                               Title="please wait.."
+                                               IsBusy="True" 
+                                                AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                                AbsoluteLayout.LayoutFlags="All"                                  
+                                               ViewBoxHeight="70" 
+                                               TextColor="#47525e" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

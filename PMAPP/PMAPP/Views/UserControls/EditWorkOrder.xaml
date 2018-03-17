@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:PMAPP.CustomControls"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:myBehaviors="clr-namespace:PMAPP.Behaviors"
+             x:Class="PMAPP.Views.UserControls.EditWorkOrder">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main">
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All" 
+                         BackgroundColor="#f8f9fa">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".8*"/>
+                    <RowDefinition Height=".1*"/>
+                </Grid.RowDefinitions>
+                <StackLayout BackgroundColor="#47525e" Grid.Row="0">
+                    <Grid VerticalOptions="CenterAndExpand" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Margin="0,0,20,0" x:Name="headerTitle"
+                           FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" HorizontalOptions="End" VerticalOptions="CenterAndExpand" FontSize="Small" Text="تعديل أمر عمل" TextColor="White" Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+                <ScrollView Grid.Row="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="رقم أمر العمل :" Grid.Column="1" Grid.Row="0"/>
+                            <Entry x:Name="woNo" HorizontalOptions="End" BackgroundColor="White" VerticalOptions="Center" IsEnabled="False" WidthRequest="215" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="اسم المشروع :" Grid.Column="1" Grid.Row="1"/>
+                            <customControls:MyPicker BackgroundColor="White"  x:Name="projectName"  HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="1"/>
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  HorizontalOptions="Center" FontSize="12" VerticalOptions="Center" HorizontalTextAlignment="End" Text="المقاول :" Grid.Column="1" Grid.Row="2"/>
+                            <customControls:MyPicker BackgroundColor="White" x:Name="contractor" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="2"/>
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="موقع المشروع :" Grid.Column="1" Grid.Row="3"/>
+                            <customControls:MyPicker BackgroundColor="White" x:Name="location" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="3"/>                            
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="تاريخ البدء :" Grid.Column="1" Grid.Row="4"/>
+                            <customControls:MyDatePicker BackgroundColor="White" x:Name="StartDate" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="4"/>                            
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="نوع الفولت :" Grid.Column="1" Grid.Row="5"/>
+                            <customControls:MyPicker BackgroundColor="White" x:Name="voltageLevel" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="5"/>
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="المبلغ :" Grid.Column="1" Grid.Row="6"/>
+                            <Entry x:Name="workOrderValue" BackgroundColor="White" HorizontalTextAlignment="Center" FontSize="12" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="6">
+                                <Entry.Behaviors>
+                                    <myBehaviors:IntegerBehavior/>
+                                </Entry.Behaviors>
+                            </Entry>
+                            <Label TextColor="Black" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"  FontSize="12" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="End" Text="اسم المستخدم :" Grid.Column="1" Grid.Row="7"/>
+                            <customControls:MyPicker BackgroundColor="White" x:Name="workOrderUser" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="215" Grid.Column="0" Grid.Row="7"/>
+                        </Grid>                        
+                    </ScrollView>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width=".5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="التالي" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" Grid.Column="1" BackgroundColor="#47525e" TextColor="White" Clicked="saveEvent_Tapped" 
+                                    HeightRequest="60" WidthRequest="210" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Button Text="إلغاء" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" Grid.Column="0" BackgroundColor="#47525e" TextColor="White" Clicked="cancelEvent_Tapped" 
+                                    HeightRequest="60" WidthRequest="210" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+
+            <!--</StackLayout>
+                <StackLayout>
+                    <Button Text="حفظ" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" BackgroundColor="#47525e" TextColor="White" Clicked="saveEvent_Tapped" WidthRequest="230" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Button Text="إلغاء" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" BackgroundColor="#47525e" TextColor="White" Clicked="cancelEvent_Tapped" WidthRequest="230" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>-->
+            <!--<StackLayout x:Name="biContainar" IsVisible="False" BackgroundColor="#ffffff" Opacity=".9" 
+                         WidthRequest="5000" HeightRequest="5000"
+                                               AbsoluteLayout.LayoutBounds=".5,.5,1,1" 
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator"  
+                                               AnimationType="DoubleCircle"
+                                               ViewBoxWidth = "70" 
+                                               Title="please wait.."
+                                               IsBusy="false" 
+                                               AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                               AbsoluteLayout.LayoutFlags="All"                                  
+                                               ViewBoxHeight="70" 
+                                               TextColor="#47525e" />-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

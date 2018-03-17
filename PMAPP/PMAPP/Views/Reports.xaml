@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:PMAPP.CustomControls;assembly=PMAPP"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="PMAPP.Views.Reports">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main">
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                           BackgroundColor="#f8f9fa">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--HEADER-->
+                <AbsoluteLayout x:Name="header" BackgroundColor="#47525e" Grid.Row="0">
+                    <Label HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           AbsoluteLayout.LayoutBounds=".5,.5, 1,1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           FontSize="Small" 
+                           x:Name="headerTitle" 
+                           FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" 
+                           TextColor="White" />
+                    <customControls:ImageButton Source="mnu.gif" 
+                                                    AbsoluteLayout.LayoutBounds=".93,.50, 30,25"
+                                                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                    ItemTapped="settings_ItemTapped"
+                                                    x:Name="settings" />
+                </AbsoluteLayout>
+                <!--NAVBAR-->
+                <Frame  Grid.Row="1" HasShadow="True" Margin="0,-10,0,0" CornerRadius="0" Padding="0" BackgroundColor="White" >
+                    <StackLayout x:Name="navBar">
+                        <Grid x:Name="head" RowSpacing="0" ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"  />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout HeightRequest="80" WidthRequest="200" Grid.Column="2">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="moniEvent_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <customControls:ImageButton x:Name="monitoring" Source="tap1.gif"
+                                                        HorizontalOptions="Center" 
+                                                        HeightRequest="30"
+                                                        WidthRequest="200"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        ItemTapped="moniEvent_Tapped" 
+                                                        Margin="5"/>
+                                <Label Text="المتابعة" FontSize="10" HorizontalTextAlignment="Center" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"/>
+                                <StackLayout x:Name="tap1" HeightRequest="2"/>
+                            </StackLayout>
+                            <StackLayout HeightRequest="80" WidthRequest="200" Grid.Column="1">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="entryEvent_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <customControls:ImageButton x:Name="entry" Source="tap2.gif"
+                                                        HorizontalOptions="Center" 
+                                                        HeightRequest="30"
+                                                        WidthRequest="200"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        ItemTapped="entryEvent_Tapped" 
+                                                        Margin="5"/>
+                                <Label Text="اوامر العمل" FontSize="10" HorizontalTextAlignment="Center" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"/>
+                                <StackLayout x:Name="tap2" HeightRequest="2"/>
+                            </StackLayout>
+                            <StackLayout HeightRequest="50" WidthRequest="200" Grid.Column="0">
+                                <customControls:ImageButton x:Name="report" Source="tap3S.gif"
+                                                        HorizontalOptions="Center" 
+                                                        HeightRequest="30"
+                                                        WidthRequest="200"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        Margin="5"/>
+                                <Label Text="التقارير" FontSize="10" HorizontalTextAlignment="Center" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"/>
+                                <StackLayout x:Name="tap3" HeightRequest="2"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <!--CONTENT-->
+                <StackLayout VerticalOptions="Center" Grid.Row="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="200"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame x:Name="crf" Margin="10" HeightRequest="60" WidthRequest="60" Grid.Row="0" Grid.Column="1" HasShadow="True" CornerRadius="3" BackgroundColor="White">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="contractorsReport_Clicked"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <customControls:ImageButton x:Name="cr" Source="cr.gif"
+                                                        HorizontalOptions="Center" 
+                                                        HeightRequest="50"
+                                                        WidthRequest="50"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        ItemTapped="contractorsReport_Clicked" 
+                                                        Margin="5"/>
+                                <Label Text="احصائيات المقاولين" FontSize="16" HorizontalTextAlignment="Center" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame x:Name="prf" Margin="10" HeightRequest="60" WidthRequest="60" Grid.Row="1" Grid.Column="1" HasShadow="True" CornerRadius="3" BackgroundColor="White">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="projectsReport_Clicked"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <customControls:ImageButton x:Name="ur" Source="ur.gif"
+                                                        HorizontalOptions="Center" 
+                                                        HeightRequest="50"
+                                                        WidthRequest="50"
+                                                        VerticalOptions="CenterAndExpand"
+                                                        Margin="5"/>
+                                <Label Text="احصائيات المشاريع" FontSize="16" HorizontalTextAlignment="Center" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"/>
+                            </StackLayout>
+                        </Frame>                        
+                    </Grid>
+
+                </StackLayout>
+            </Grid>
+            <!--MASTER-->
+            <StackLayout x:Name="Master" 
+                         IsVisible="False" 
+                         BackgroundColor="#f2f2f2" 
+                         Opacity="1" 
+                         WidthRequest="5000"
+                         AbsoluteLayout.LayoutBounds="1,1,.8,1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <StackLayout>
+                    <StackLayout HeightRequest="150" WidthRequest="400" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#47525e">
+                        <BoxView HeightRequest="30"/>
+                        <Image HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Source="loginW.png"/>
+                        <Label HorizontalTextAlignment="Center" HorizontalOptions="Center" TextColor="White" VerticalOptions="Center" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" Text="انجاز"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <ListView x:Name="EmployeeView" SeparatorVisibility="None" ItemTapped="EmployeeView_ItemTapped">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell xfg:CellGloss.BackgroundColor="#f8f9fa">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Display}" 
+                                       Grid.Column="1"
+                                       FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                       IsVisible="True"
+                                       TextColor="Black"
+                                       FontSize="12"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End"/>
+                                            <Label Text="{Binding Data}" 
+                                       Grid.Column="0"
+                                       FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                       IsVisible="True"
+                                       TextColor="Black"
+                                       FontSize="12"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center">
+                        <BoxView HeightRequest="15"/>
+                        <Label HorizontalTextAlignment="Center" 
+                                       HorizontalOptions="Center" 
+                                       TextColor="#47525e" 
+                                       VerticalOptions="Center" 
+                                       FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" 
+                                       Text="برمجة وتطوير"/>
+                        <Label HorizontalTextAlignment="Center" 
+                                        HorizontalOptions="Center" 
+                                        TextColor="#47525e" 
+                                        VerticalOptions="Center" 
+                                        FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" 
+                                        Text="شركة أتمتة البرمجيات">
+                            <Label.GestureRecognizers >
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label HorizontalTextAlignment="Center" 
+                                       HorizontalOptions="Center" 
+                                       TextColor="#47525e" 
+                                       VerticalOptions="Center" 
+                                       FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" 
+                                       Text="920005804"/>
+                        <BoxView HeightRequest="100"/>
+                    </StackLayout>                    
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="empty"
+                         IsVisible = "False"
+                         BackgroundColor = "Gray"
+                         Opacity = ".4"
+                         AbsoluteLayout.LayoutBounds="0, 1,.2, 1" 
+                         AbsoluteLayout.LayoutFlags="All">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="empty_Tapped"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

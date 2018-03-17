@@ -1,0 +1,84 @@
+﻿@model IEnumerable<PMCP2.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <p>
+        @Html.ActionLink("Create New", "Create")| @Html.ActionLink("Back ", "../Manage")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User1.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.token)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modirate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.regon)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User1.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.token)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.role)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modirate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.regon)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

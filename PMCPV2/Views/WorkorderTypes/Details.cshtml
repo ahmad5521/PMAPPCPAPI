@@ -1,0 +1,28 @@
+﻿@model PMCP2.Models.WorkorderType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <div>
+        <h4>WorkorderType</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.workorderTypeName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.workorderTypeName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.workorderTypeID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

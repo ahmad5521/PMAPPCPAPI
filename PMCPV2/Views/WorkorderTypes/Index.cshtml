@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PMCP2.Models.WorkorderType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <p>
+        @Html.ActionLink("Create New", "Create")| @Html.ActionLink("Back ", "../Manage")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.workorderTypeName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.workorderTypeName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.workorderTypeID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.workorderTypeID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.workorderTypeID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

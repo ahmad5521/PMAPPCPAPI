@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             x:Class="PMAPP.Views.UserControls.WorkOrderParametersProgress"
+             Title="تحديث الانجاز">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                           BackgroundColor="#f8f9fa">
+            <StackLayout BackgroundColor="#47525e">
+                <StackLayout.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double"
+                      iOS="65"
+                      Android="80" />
+                </StackLayout.HeightRequest>
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="30,0,0,0" WidthRequest="20" HeightRequest="20" Source="cancel.gif" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Column="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="cancelEvent"
+                                                  Tapped="cancelEvent_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Margin="0,0,20,0" x:Name="headerTitle" HorizontalOptions="End" VerticalOptions="CenterAndExpand" FontSize="Medium"  FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" Text="تحديث الانجاز" TextColor="White" FontAttributes="Bold" Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <BoxView HeightRequest="20"/>
+                <Grid HorizontalOptions="Center" BackgroundColor="#47525e" WidthRequest="300">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout BackgroundColor="WhiteSmoke" Margin="5,5,5,0" Grid.Row="0" >
+                        <Label x:Name="parameterName" FontSize="Medium" Text="العنصر"  FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalOptions="Center"  VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="WhiteSmoke" Margin="5,0,5,0" Grid.Row="1" >
+                        <Label x:Name="parameterNameValue" FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" FontSize="Medium" HorizontalOptions="Center" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="WhiteSmoke" Margin="5,0,5,0" Grid.Row="2" >
+                        <Label x:Name="lastUpdate" FontSize="Medium" Text="اخر تحديث"  FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="WhiteSmoke" Margin="5,0,5,0" Grid.Row="3" >
+                        <Label x:Name="lastUpdateValue" FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" FontSize="Medium" HorizontalOptions="Center" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="WhiteSmoke" Margin="5,0,5,0" Grid.Row="4" >
+                        <Label x:Name="isDone" FontSize="Medium" Text="تم الانجاز ؟؟"  FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="WhiteSmoke" Margin="5,0,5,5" Grid.Row="5" >
+                        <Switch x:Name="isDoneValue" HorizontalOptions="Center" VerticalOptions="Center" Toggled="isDoneValue_Toggled" />
+                    </StackLayout>
+                </Grid>
+                <BoxView HeightRequest="35"/>
+                <Button x:Name="update" BackgroundColor="#47525e" Text="تحديث" FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" TextColor="WhiteSmoke" WidthRequest="300" IsEnabled="False" Clicked="update_Clicked"/>
+
+            </StackLayout>
+            </StackLayout>
+            <!--<StackLayout x:Name="biContainar" IsVisible="False" BackgroundColor="#ffffff" Opacity=".9" 
+                         WidthRequest="5000" HeightRequest="5000"
+                                               AbsoluteLayout.LayoutBounds=".5,.5,1,1" 
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator"  
+                                               AnimationType="DoubleCircle"
+                                               ViewBoxWidth = "70" 
+                                               Title="please wait.."
+                                               IsBusy="false" 
+                                                AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                                AbsoluteLayout.LayoutFlags="All"                                  
+                                               ViewBoxHeight="70" 
+                                               TextColor="#47525e" />-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:PMAPP.CustomControls;assembly=PMAPP"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             x:Class="PMAPP.Views.UserControls.ParametersView"
+             Title="العناصر">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="main">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                           BackgroundColor="#f8f9fa">
+            <StackLayout BackgroundColor="#47525e">
+                <StackLayout.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double"
+                      iOS="65"
+                      Android="80" />
+                </StackLayout.HeightRequest>
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <customControls:ImageButton Source="cancel.gif"
+                                            ItemTapped="cancelEvent_Tapped"
+                                            WidthRequest="22" HeightRequest="22"    
+                                            Margin="30,0,0,0"
+                                            HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+                        <Label Margin="0,0,20,0" x:Name="headerTitle" HorizontalOptions="End" VerticalOptions="CenterAndExpand" 
+                           FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular" FontSize="Small" Text="عناصر أمر عمل" TextColor="White"  Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label x:Name="Nothing" Text="لا توجد عناصر" HeightRequest="200" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" FontAttributes="Bold" IsVisible="False" TextColor="#47525e" HorizontalOptions="Center" VerticalTextAlignment="End"/>
+                <ListView x:Name="wopListView"                                                  
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell xfg:CellGloss.BackgroundColor="#f8f9fa">
+                                    <Frame HasShadow="False"  Margin="10,5,10,5" CornerRadius="3" Padding="10,5,10,5" BackgroundColor="White">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="5,5,2,5">
+                                            <StackLayout Orientation="Vertical"  
+                                         BackgroundColor="Transparent"
+                                         VerticalOptions="EndAndExpand">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <StackLayout Orientation="Horizontal" 
+                                                                 Padding="3,3,3,3"
+                                                                 Grid.Row="0"
+                                                                 HorizontalOptions="End">
+                                                        <Label x:Name="wondata" 
+                                                               Text="{Binding ParameterName}"
+                                                               FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                                               IsVisible="True"
+                                                               TextColor="Black"
+                                                               FontSize="14"
+                                                               HorizontalTextAlignment="End"/>
+                                                        <Label Text="العنصر : " 
+                                                               FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                               FontAttributes="Bold"
+                                                               TextColor="Black"
+                                                               FontSize="14"
+                                                               HorizontalTextAlignment="End"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                                <StackLayout Orientation="Vertical">
+                                                    <Grid ColumnSpacing="5">
+                                                        <Grid.ColumnDefinitions>
+                                                            <!--<ColumnDefinition Width="*" />-->
+                                                            <ColumnDefinition Width=".5*" />
+                                                            <ColumnDefinition Width=".5*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <!--<StackLayout Orientation="Horizontal" 
+                                                                     Grid.Column="1"
+                                                                     Margin="5"
+                                                                     HorizontalOptions="End">-->
+                                                        <Label Text="{Binding injaz} " 
+                                                                       Grid.Column="1"
+                                                                        FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                                        FontAttributes="Bold"
+                                                                        TextColor="Gray"
+                                                                        VerticalTextAlignment="Center"
+                                                                        FontSize="12"
+                                                                        Opacity="1"
+                                                                        HorizontalTextAlignment="End"/>
+                                                        <!--</StackLayout>-->
+                                                        <!--<StackLayout Orientation="Horizontal"
+                                                                            Grid.Column="0"
+                                                                            Margin="5"
+                                                                            HorizontalOptions="End">-->
+                                                        <Grid Grid.Column="0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width=".2*"/>
+                                                                <ColumnDefinition Width=".8*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label x:Name="woldata"  Text="{Binding data}" Grid.Column="0"
+                                                                        FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                                        IsVisible="True"
+                                                                        VerticalTextAlignment="Center"
+                                                                        TextColor="Gray"
+                                                                        FontSize="12"
+                                                                        Opacity="1"
+                                                                        HorizontalTextAlignment="End"/>
+                                                            <Label Text="{Binding what}" Grid.Column="1"
+                                                                        FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                                        FontAttributes="Bold"
+                                                                        HorizontalTextAlignment="End" 
+                                                                        VerticalTextAlignment="Center"
+                                                                        TextColor="Gray"
+                                                                        FontSize="12"
+                                                                        Opacity="1"/>
+                                                        </Grid>
+
+
+                                                        <!--</StackLayout>-->
+                                                        <!--<StackLayout Orientation="Horizontal"
+                                                         Grid.Column="0"
+                                                         Margin="5,3,10,3"
+                                                         HorizontalOptions="Start">
+                                                            <Label x:Name="isDonelbl"  
+                                                                   IsVisible="{Binding isDone}"
+                                                                   TextColor="Black"
+                                                                   FontSize="10"
+                                                                   Opacity="0.6"
+                                                                   Text="تم الانجاز"
+                                                                       FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                   HorizontalOptions="Start"/>
+                                                        </StackLayout>-->
+                                                    </Grid>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <!--<StackLayout WidthRequest="50" BackgroundColor="Transparent" HorizontalOptions="Start">
+                                        <BoxView HeightRequest="0"/>
+                                        <Image Source="data.gif" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    </StackLayout>-->
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <!--<ListView.ItemTemplate>
+                        <DataTemplate>
+                                <ViewCell xfg:CellGloss.BackgroundColor="#f8f9fa">
+                                <Frame HasShadow="False" Margin="10,5,10,5" CornerRadius="3" Padding="10,5,10,5" BackgroundColor="White">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="5,5,2,5">
+                                        <StackLayout Orientation="Vertical"  
+                                         BackgroundColor="Transparent"
+                                         VerticalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Horizontal" 
+                                             Padding="3,3,3,3"
+                                             HorizontalOptions="End">
+                                                <Label x:Name="wondata" 
+                                                   Text="{Binding ParameterName}"
+                                                   FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                               IsVisible="True"
+                                               TextColor="Black"
+                                               FontSize="12"
+                                               HorizontalTextAlignment="End"/>
+                                                <Label Text="العنصر : " 
+                                                   FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                               FontAttributes="Bold"
+                                               TextColor="Black"
+                                               FontSize="12"
+                                               HorizontalTextAlignment="End"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Vertical">
+                                                <Grid ColumnSpacing="5">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="auto" />
+                                                        <ColumnDefinition Width="auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Horizontal" 
+                                                 Grid.Column="2"
+                                                 Margin="10,3,5,3"
+                                                 HorizontalOptions="End">
+                                                        <Label x:Name="wopdata"  Text="{Binding woNo}"
+                                                   FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                                   IsVisible="True"
+                                                   TextColor="Black"
+                                                   FontSize="10"
+                                                   Opacity="0.6"
+                                                   HorizontalTextAlignment="End"/>
+                                                        <Label Text="امر العمل : " 
+                                                   FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                   FontAttributes="Bold"
+                                                   TextColor="Black"
+                                                   FontSize="10"
+                                                   Opacity="0.6"
+                                                   HorizontalTextAlignment="End"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal"
+                                                 Grid.Column="1"
+                                                 Margin="15,3,0,3"
+                                                 HorizontalOptions="End">
+                                                        <Label x:Name="woldata"  Text="{Binding Lenght}"
+                                                   FontFamily="DroidKufi-Regular.ttf#DroidKufi-Regular"
+                                                   IsVisible="True"
+                                                   TextColor="Black"
+                                                   FontSize="10"
+                                                   Opacity="0.6"
+                                                   HorizontalTextAlignment="End"/>
+                                                        <Label Text="طول المشروع : " 
+                                                   FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                   FontAttributes="Bold"
+                                                   HorizontalTextAlignment="End" 
+                                                   TextColor="Black"
+                                                   FontSize="10"
+                                                   Opacity="0.6"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal"
+                                                         Grid.Column="0"
+                                                         Margin="5,3,10,3"
+                                                         HorizontalOptions="Start">
+                                                        <Label x:Name="isDonelbl"  
+                                                   IsVisible="{Binding isDone}"
+                                                   TextColor="Black"
+                                                   FontSize="10"
+                                                   Opacity="0.6"
+                                                   Text="تم الانجاز"
+                                                   FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold"
+                                                   HorizontalOptions="Start"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        --><!--<StackLayout WidthRequest="50" BackgroundColor="Transparent" HorizontalOptions="Start">
+                                        <BoxView HeightRequest="0"/>
+                                        <Image Source="data.gif" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    </StackLayout>--><!--
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>-->
+                </ListView>
+            </StackLayout>
+            </StackLayout>
+            <!--<StackLayout x:Name="biContainar" IsVisible="False" BackgroundColor="#ffffff" Opacity=".9" 
+                         WidthRequest="5000" HeightRequest="5000"
+                                               AbsoluteLayout.LayoutBounds=".5,.5,1,1" 
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+            <busyindicator:SfBusyIndicator x:Name="busyindicator"  
+                                               AnimationType="DoubleCircle"
+                                               ViewBoxWidth = "70" 
+                                               Title="please wait.."
+                                               IsBusy="false" 
+                                                AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                                AbsoluteLayout.LayoutFlags="All"                                  
+                                               ViewBoxHeight="70" 
+                                               TextColor="#47525e" />-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

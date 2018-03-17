@@ -1,0 +1,92 @@
+﻿@model PMCP2.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <div>
+        <h4>User</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.User1.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.User1.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.userName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.userName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.token)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.token)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.isActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.isActive)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.role)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.role)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.modirate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.modirate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.regon)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.regon)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

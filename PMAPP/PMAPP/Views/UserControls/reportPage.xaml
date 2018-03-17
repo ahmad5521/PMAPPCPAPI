@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:PMAPP.CustomControls;assembly=PMAPP"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:control="clr-namespace:PMAPP.Views.UserControls"
+             x:Class="PMAPP.Views.UserControls.reportPage">
+    <ContentPage.Content>
+        <!--HEADER-->
+        <AbsoluteLayout x:Name="main">
+            <!--<StackLayout x:Name="content" AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All"
+                           BackgroundColor="#f8f9fa">
+            <StackLayout BackgroundColor="#47525e">
+                <StackLayout.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double"
+                      iOS="65"
+                      Android="80" />
+                </StackLayout.HeightRequest>
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <customControls:ImageButton Source="cancel.gif"
+                                            ItemTapped="cancelEvent_Tapped"
+                                            WidthRequest="22" HeightRequest="22"    
+                                            Margin="30,0,0,0"
+                                            HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+
+                    <Label Margin="0,0,20,0" x:Name="headerTitle" HorizontalOptions="End" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="White" FontAttributes="Bold" Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+                --><!--<control:reportContractors x:Name="cr" HeightRequest="1000" IsVisible="False"/>
+                <control:reportUsers x:Name="ur" HeightRequest="1000" IsVisible="False"/>--><!--
+        </StackLayout>-->
+
+            <Grid BackgroundColor="#f8f9fa" 
+                  AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                  AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".1*"/>
+                    <RowDefinition Height=".9*"/>
+                </Grid.RowDefinitions>
+                <Grid BackgroundColor="#47525e" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <customControls:ImageButton Source="cancel.gif"
+                                            ItemTapped="cancelEvent_Tapped"
+                                            WidthRequest="22" HeightRequest="22"    
+                                            Margin="30,0,0,0"
+                                            HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+                    <Label Margin="0,0,20,0" x:Name="headerTitle" HorizontalOptions="End" FontFamily="DroidKufi-Bold.ttf#DroidKufi-Bold" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="White" FontAttributes="Bold" Grid.Column="1"/>
+                </Grid>
+                <StackLayout x:Name="content" Grid.Row="1"/>
+            </Grid>
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

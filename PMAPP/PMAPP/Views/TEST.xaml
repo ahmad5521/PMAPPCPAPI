@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             x:Class="PMAPP.Views.TEST">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+            <Image x:Name="PhotoImage" />
+                <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" />
+                <Button x:Name="GalaryButton" Text="See Photo" Grid.Row="2" />
+            </Grid>
+
+           
+            <!--LOADING-->
+        <StackLayout x:Name="biContainar" IsVisible="False" BackgroundColor="#ffffff" Opacity=".9" 
+                         WidthRequest="5000" HeightRequest="5000"
+                                               AbsoluteLayout.LayoutBounds=".5,.5,1,1" 
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+        <busyindicator:SfBusyIndicator x:Name="busyindicator"  
+                                               AnimationType="DoubleCircle"
+                                               ViewBoxWidth = "70" 
+                                               Title="please wait.."
+                                               IsBusy="false" 
+                                                AbsoluteLayout.LayoutBounds=".5,.5,1,1"
+                                                AbsoluteLayout.LayoutFlags="All"                                  
+                                               ViewBoxHeight="70" 
+                                               TextColor="#47525e" />
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

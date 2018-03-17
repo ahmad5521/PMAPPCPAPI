@@ -1,0 +1,108 @@
+﻿@model IEnumerable<PMCP2.Models.WorkOrder>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row border-bottom white-bg dashboard-header">
+    <p>
+        @Html.ActionLink("Create New", "Create")| @Html.ActionLink("Back ", "../Manage")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractor.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParameterCategory.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VoltageLevel.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderStatu.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalLenght)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maxDueDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateTimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.value)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contractor.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParameterCategory.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VoltageLevel.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkOrderStatu.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.totalLenght)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.startingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.maxDueDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dateTimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.value)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

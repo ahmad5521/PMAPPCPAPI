@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:local="clr-namespace:PMAPP.ViewModels"
+             x:Class="PMAPP.Views.UserControls.reportContractors">
+
+    <ContentPage.BindingContext>
+        <local:ContractorsViewModel></local:ContractorsViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentView.Content >
+        <AbsoluteLayout x:Name="main">
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                         AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".99*"/>
+                </Grid.RowDefinitions>
+                <busyindicator:SfBusyIndicator Grid.Row="0" x:Name="bi" 
+                                               AnimationType="DoubleCircle" 
+                                               ViewBoxWidth="40" 
+                                               VerticalOptions="Center" 
+                                               HorizontalOptions="Center"
+                                               TextColor="#47525e"
+                                               Title = "please wait.." 
+                                               IsBusy="{Binding IsBusy}" 
+                                               ViewBoxHeight="40"/>
+                <ScrollView Grid.Row="0">
+                    <ContentPage.Resources>
+                        <ResourceDictionary>
+                            <!--<chart:ChartColorCollection x:Key="Colors">
+                                <Color>#667962</Color>
+                                <Color>#c1c9c0</Color>
+                                <Color>#8B5742</Color>
+                                <Color>#c5aba0</Color>
+                            </chart:ChartColorCollection>
+                            <chart:ChartColorCollection x:Key="Colors2">
+                                <Color>#667962</Color>
+                                <Color>#8B5742</Color>
+                            </chart:ChartColorCollection>-->
+                            <chart:ChartColorCollection x:Key="Colors">
+                                <Color>#23B698</Color>
+                                <Color>#8CD9C9</Color>
+                                <Color>#bdbdbd</Color>
+                                <Color>#d5d5d5</Color>
+                            </chart:ChartColorCollection>
+                            <chart:ChartColorCollection x:Key="Colors2">
+                                <Color>#23B698</Color>
+                                <Color>#bdbdbd</Color>
+                            </chart:ChartColorCollection>
+                        </ResourceDictionary>
+                    </ContentPage.Resources>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="400"/>
+                            <RowDefinition Height="400"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Text="لا يوجد بيانات" IsVisible="{Binding IsLableVisible}" TextColor="Black" HorizontalTextAlignment="Center" Font="DroidKufi-Bold.ttf#DroidKufi-Bold" Grid.Row="0"/>
+
+                        <chart:SfChart Grid.Row="0" IsVisible="{Binding IsChartlVisible}">
+                            <chart:SfChart.ColorModel>
+                                <chart:ChartColorModel Palette="Custom" CustomBrushes="{StaticResource Colors2}"/>
+                            </chart:SfChart.ColorModel>
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:CategoryAxis>
+                                    <chart:CategoryAxis.Title>
+                                    </chart:CategoryAxis.Title>
+                                </chart:CategoryAxis>
+                            </chart:SfChart.PrimaryAxis>
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis Interval="1">
+                                    <chart:NumericalAxis.Title>
+                                    </chart:NumericalAxis.Title>
+                                </chart:NumericalAxis>
+                            </chart:SfChart.SecondaryAxis>
+                            <chart:SfChart.Series>
+                                <chart:ColumnSeries ItemsSource ="{Binding Contractor_noOfWorkorders_projects}" XBindingPath="contractorName" Label="مشاريع" EnableTooltip ="True"
+	                                        YBindingPath="noOfWorkOrders"/>
+                                <chart:ColumnSeries ItemsSource ="{Binding Contractor_noOfWorkorders_twsilat}" XBindingPath="contractorName" Label="توصيلات" EnableTooltip ="True"
+	                                        YBindingPath="noOfWorkOrders"/>                                
+                            </chart:SfChart.Series>
+                            <chart:SfChart.ChartBehaviors>
+                                <chart:ChartZoomPanBehavior ZoomMode="X"/>
+                            </chart:SfChart.ChartBehaviors>
+                            <chart:SfChart.Title>
+                                <chart:ChartTitle Font="DroidKufi-Bold.ttf#DroidKufi-Bold" Text="عدد اوامر العمل بالنسبة للمقاولين"/>
+                            </chart:SfChart.Title>
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend />
+                            </chart:SfChart.Legend>
+                        </chart:SfChart>
+
+                        <chart:SfChart Grid.Row="1" IsVisible="{Binding IsChartlVisible}">
+                            <chart:SfChart.ColorModel>
+                                <chart:ChartColorModel Palette="Custom" CustomBrushes="{StaticResource Colors}"/>
+                            </chart:SfChart.ColorModel>
+                            <chart:SfChart.PrimaryAxis>
+                                <chart:CategoryAxis>
+                                    <chart:CategoryAxis.Title>
+                                    </chart:CategoryAxis.Title>
+                                </chart:CategoryAxis>
+                            </chart:SfChart.PrimaryAxis>
+                            <chart:SfChart.SecondaryAxis>
+                                <chart:NumericalAxis Interval="1">
+                                    <chart:NumericalAxis.Title>
+                                    </chart:NumericalAxis.Title>
+                                </chart:NumericalAxis>
+                            </chart:SfChart.SecondaryAxis>
+                            <chart:SfChart.Series>
+                                <chart:StackingColumnSeries ItemsSource ="{Binding V_Contractor_noOfAchievedWorkorders_workorderType_projects}" XBindingPath="contractorName" Label="منجزة - مشاريع" EnableTooltip ="True" GroupingLabel="GroupTwo"
+	                                        YBindingPath="noOfCompleted"/>
+                                <chart:StackingColumnSeries ItemsSource ="{Binding V_Contractor_noOfAchievedWorkorders_workorderType_projects}" XBindingPath="contractorName" Label="تحت الاجراء - مشاريع"  EnableTooltip ="True" GroupingLabel="GroupTwo"
+	                                        YBindingPath="noOfNotCompleted"/>
+                                
+                                <chart:StackingColumnSeries ItemsSource ="{Binding V_Contractor_noOfAchievedWorkorders_workorderType_twsilat}" XBindingPath="contractorName" Label="منجزة - توصيلات" EnableTooltip ="True" GroupingLabel="GroupOne"
+	                                        YBindingPath="noOfCompleted"/>
+                                <chart:StackingColumnSeries ItemsSource ="{Binding V_Contractor_noOfAchievedWorkorders_workorderType_twsilat}" XBindingPath="contractorName" Label="تحت الاجراء - توصيلات" EnableTooltip ="True" GroupingLabel="GroupOne"
+	                                        YBindingPath="noOfNotCompleted"/>                                
+                            </chart:SfChart.Series>
+                            <chart:SfChart.ChartBehaviors>
+                                <chart:ChartZoomPanBehavior ZoomMode="X"/>
+                            </chart:SfChart.ChartBehaviors>
+                            <chart:SfChart.Title>
+                                <chart:ChartTitle Font="DroidKufi-Bold.ttf#DroidKufi-Bold" Text="شهادات الانجاز بالنسبة للمقاولين"/>
+                            </chart:SfChart.Title>
+                            <chart:SfChart.Legend>
+                                <chart:ChartLegend />
+                            </chart:SfChart.Legend>
+                        </chart:SfChart>
+                    </Grid>
+
+                </ScrollView>
+            </Grid>            
+        </AbsoluteLayout>         
+    </ContentView.Content>
+    
+</ContentView>
