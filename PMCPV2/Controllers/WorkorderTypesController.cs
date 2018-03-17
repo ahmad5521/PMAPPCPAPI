@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using PMCP2.Models;
+using PMCPV2.Models;
 
-namespace PMCP2.Controllers
+namespace PMCPV2.Controllers
 {
     public class WorkorderTypesController : Controller
     {

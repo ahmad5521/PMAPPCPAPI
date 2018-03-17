@@ -1,4 +1,4 @@
-namespace PMCP2.Models
+namespace PMCPV2.Models
 {
     using System;
     using System.Collections.Generic;

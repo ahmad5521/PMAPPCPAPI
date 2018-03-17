@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using Inspinia_MVC5_SeedProject.Models;
+using PMCPV2.Models;
 
-namespace Inspinia_MVC5_SeedProject.Controllers
+namespace PMCPV2.Controllers
 {
     [Authorize]
     public class AccountController : Controller

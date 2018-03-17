@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace PMCP2.Models
+namespace PMCPV2.Models
 {
     public class IndexViewModel
     {

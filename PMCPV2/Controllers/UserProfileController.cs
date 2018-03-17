@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Inspinia_MVC5_SeedProject.Controllers
+namespace PMCPV2.Controllers
 {
     public class UserProfileController : Controller
     {
