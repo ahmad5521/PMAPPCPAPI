@@ -17,9 +17,9 @@ namespace PMAPP.Services
         //192.168.1.4
         //ahmadasirii7-001-site1.gtempurl.com
 
-        public string url = "http://api.injaz-tabuk.com";
-        //public string url = "http://192.168.1.4";
-        //public string url = "http://localhost:50042";
+        public string url = "http://url";
+        //public string url = "http://url";
+        //public string url = "http://url";
         //localhost:52173
 
         public async Task<List<WorkOrderView>> getWorkOrderViewByIDAsync(int v)
