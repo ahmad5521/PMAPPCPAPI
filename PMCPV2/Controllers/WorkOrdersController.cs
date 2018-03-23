@@ -10,6 +10,7 @@ using PMCPV2.Models;
 
 namespace PMCPV2.Controllers
 {
+    [Authorize]
     public class WorkOrdersController : Controller
     {
         private DATA db = new DATA();

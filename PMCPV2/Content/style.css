@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
-/*
- *
- *   INSPINIA - Responsive Admin Theme
- *   version 2.7.1
- *
-*/
+
+
+
+@font-face {
+    font-family: 'DroidKufi-Regular';
+    src: url('../fonts/font-kufi/DroidKufi-Regular.ttf') format('truetype');
+}
+
 h1,
 h2,
 h3,
@@ -44,7 +46,8 @@ h5 {
   padding: 14px 20px 14px 25px;
 }
 .nav.navbar-right > li > a {
-  color: #999c9e;
+    font-family: 'DroidKufi-Regular';
+    color: #999c9e;
 }
 .nav > li.active > a {
   color: #ffffff;
@@ -57,7 +60,7 @@ h5 {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background: #fff;
+    background: #fff;
 }
 .nav.navbar-top-links > li > a:hover,
 .nav.navbar-top-links > li > a:focus {
@@ -101,14 +104,14 @@ h5 {
   top: 100%;
   z-index: 1000;
 }
-.dropdown-menu > li > a {
-  border-radius: 3px;
-  color: inherit;
-  line-height: 25px;
-  margin: 4px;
-  text-align: left;
-  font-weight: normal;
-}
+    .dropdown-menu > li > a {
+            border-radius: 3px;
+        color: inherit;
+        line-height: 25px;
+        margin: 4px;
+        text-align: left;
+        font-weight: normal;
+    }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:focus,
 .dropdown-menu > .active > a:hover {
@@ -1273,6 +1276,29 @@ button.dim:active:before {
   position: relative;
   text-decoration: none;
 }
+
+
+/* PAGINATIN NAV */
+.paging-nav {
+    text-align: right;
+    padding-top: 2px;
+}
+
+    .paging-nav a {
+        margin: auto 1px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1px 7px;
+        background: #1ab39491;
+        color: white;
+        border-radius: 3px;
+    }
+
+    .paging-nav .selected-page {
+        background: #1ab394;
+        font-weight: bold;
+    }
+
 /* TOOLTIPS */
 .tooltip-inner {
   background-color: #2F4050;
@@ -3477,11 +3503,11 @@ body.tour-open .animated {
   border-bottom: 1px solid #e7eaec;
 }
 body {
-  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #2f4050;
-  font-size: 13px;
-  color: #676a6c;
-  overflow-x: hidden;
+    font-family: DroidKufi-Regular;
+    background-color: #2f4050;
+    font-size: 13px;
+    color: #676a6c;
+    overflow-x: hidden;
 }
 html,
 body {
@@ -8559,4 +8585,42 @@ body.md-skin {
   #page-wrapper {
     margin: 0;
   }
+}
+
+
+/* DivTable.com */
+.divTable {
+    display: table;
+    width: 100%;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+}
+
+.divTableCell, .divTableHead {
+    border: 1px solid #999999;
+    display: table-cell;
+    padding: 3px 10px;
+}
+
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.divTableFoot {
+    background-color: #EEE;
+    display: table-footer-group;
+    font-weight: bold;
+}
+
+.divTableBody {
+    display: table-row-group;
 }

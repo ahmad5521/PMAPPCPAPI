@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace PMCPV2.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ManageController : Controller
     {
         // GET: Manage
